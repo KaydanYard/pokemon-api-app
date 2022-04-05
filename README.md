@@ -25,3 +25,14 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Pokemon API Resources
+
+A High-Level Overview of the API
+(https://pokeapi.co/)
+
+Link to the Github Typescript Documentation for the PokeAPI
+(https://github.com/Gabb-c/pokenode-ts)
+
+Link to Pokenode-ts Documentation
+(https://pokenode-ts-docs-gabb-c.vercel.app/)
