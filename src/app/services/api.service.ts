@@ -12,7 +12,7 @@ export class ApiService {
 
       await api.pokemon
         .getPokemonByName('luxray')
-        .then((data) => console.log(data.name)) // will output "Luxray"
+        .then((data) => console.log(data))
         .catch((error) => console.error(error));
     })();
   }
