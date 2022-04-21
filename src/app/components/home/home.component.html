@@ -1,6 +1,12 @@
-<p>Home Collection</p>
-<div *ngFor="let pokemon in data | async">
-  <div>
-    <a href="#">{{pokemon.name}}</a>
-  </div>
-</div>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Poke Home</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>Find Pokemon and favorite them. Look through their stats and movesets to find the pokemon that suits you. Admire
+      your favorited pokemon list and look at their descriptions.</p>
+  </mat-card-content>
+</mat-card>
+
+<a routerLink="pokefind">Search for Pokemon</a>

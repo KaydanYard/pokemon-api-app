@@ -1,0 +1,28 @@
+body {
+  width: 100%;
+  height: auto;
+
+  .pokemonWrapper {
+    display: flex;
+    flex-direction: column;
+
+    .pokemonData {
+
+      .idWrapper {
+        display: flex;
+
+        p {
+          margin-right: 10px;
+        }
+      }
+
+      .typesWrapper {
+        display: flex;
+
+        p {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

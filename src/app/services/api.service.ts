@@ -1,20 +1,15 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MainClient } from 'pokenode-ts';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class ApiService {
-  constructor() { }
-  getPokemon() {
-    (async () => {
-      const api = new MainClient();
+  constructor(private _http: HttpClient) { }
 
-      await api.pokemon
-        .getPokemonByName('luxray')
-        .then((data) => console.log(data))
-        .catch((error) => console.error(error));
-    })();
+  getPokemon(id: number) {
+    var url = "https://pokeapi.co/api/v2/pokemon/" + id
+    return this._http.get(url);
   }
-
 }

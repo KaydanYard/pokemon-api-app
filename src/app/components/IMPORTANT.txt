@@ -1,0 +1,8 @@
+Bootstrap is causing issues with Angular Material.  It needs to be removed.
+
+TO DO list
+----------
+
+1. Take out the carousel and the unordered list styles that rely on Bootstrap
+2. Replace them with their Angular Material counterparts (carousel replaced with Tabs)
+3. Work on adding a favorites function to pokefind and add a new component called favorites
