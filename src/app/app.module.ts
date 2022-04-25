@@ -5,15 +5,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PokefindComponent } from './pokefind/pokefind.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { PokefindComponent } from './components/pokefind/pokefind.component';
 import { HomeComponent } from './components/home/home.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
@@ -25,24 +28,27 @@ import { MatTabsModule } from '@angular/material/tabs';
   declarations: [
     AppComponent,
     PokefindComponent,
-    HomeComponent
+    HomeComponent,
+    SignupComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
-    HttpClientModule,
     FormsModule,
+    HttpClientModule,
     MatButtonModule,
     MatCardModule,
     MatCheckboxModule,
     MatExpansionModule,
     MatFormFieldModule,
+    MatIconModule,
     MatInputModule,
     MatRadioModule,
     MatSelectModule,
     MatTableModule,
-    MatTabsModule
+    MatTabsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,14 +1,26 @@
-Bootstrap is causing issues with Angular Material.  It needs to be removed.
 
 TO DO list
-----------
+--------------------------------------------------
 
 ✅ 1. Take out the carousel and the unordered list styles that rely on Bootstrap
 ✅ 2. Replace them with their Angular Material counterparts (carousel replaced with Tabs)
 ❌ 3. Work on adding a favorites function to pokefind and add a new component called favorites
 (must add authentication to implement the favorites function)
 
+📍 4. Create a sign up page in the components folder
+❌ 5. Link Firebase Authentication to the sign up page
+❌ 6. Add login functionality to the home page
+
 When Authentication is added use this repo: 
   https://github.com/gothinkster/angular-realworld-example-app/blob/master/src/app/shared/buttons/favorite-button.component.ts 
 
 to add the favorite button
+
+❌ 7. Add a Paginator to the bottom of the Pokéfind page
+
+BUGS
+--------------------------------------------------
+
+✅ 1. The Nav Bar is adding the router link to the end of the current url.  
+   This is causing it to have trouble navigating from the Sign Up page to the Pokéfind page.
+   (Try clearing the old route then add the new route)
