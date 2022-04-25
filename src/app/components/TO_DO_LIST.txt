@@ -7,3 +7,8 @@ TO DO list
 ✅ 2. Replace them with their Angular Material counterparts (carousel replaced with Tabs)
 ❌ 3. Work on adding a favorites function to pokefind and add a new component called favorites
 (must add authentication to implement the favorites function)
+
+When Authentication is added use this repo: 
+  https://github.com/gothinkster/angular-realworld-example-app/blob/master/src/app/shared/buttons/favorite-button.component.ts 
+
+to add the favorite button
