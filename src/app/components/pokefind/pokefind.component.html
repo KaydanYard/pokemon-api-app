@@ -8,141 +8,173 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Search By ID: </mat-label>
-    <input #pokemonIdSelector placeholder="Input ID here" type="number">
+    <input matInput #pokemonIdSelector placeholder="Input ID here" type="number">
   </mat-form-field>
 
-  <div>
-    <!-- <span>Search By Name: </span>
-    <input #pokemonNameSelector type="text"> -->
-  </div><br>
+  <!-- <div>
+    <span>Search By Name: </span>
+    <input #pokemonNameSelector type="text">
+  </div> -->
+  <br>
 
   <label for="pokemon">Choose a Pokemon: </label>
-
   <button mat-button (click)="displayPokemon(pokemonIdSelector.value)">I Choose You!</button>
 
-  <div class="pokemonWrapper">
+  <!-- ==================================================================================== -->
+  <!-- ==================================================================================== -->
 
-    <!-- Replace Carousel with <mat-tab-group> -->
-    <div id="carousel-wrapper" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carousel-wrapper" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-wrapper" data-slide-to="1"></li>
-        <li data-target="#carousel-wrapper" data-slide-to="2"></li>
-        <li data-target="#carousel-wrapper" data-slide-to="3"></li>
-        <li data-target="#carousel-wrapper" data-slide-to="4"></li>
-        <li data-target="#carousel-wrapper" data-slide-to="5"></li>
-        <li data-target="#carousel-wrapper" data-slide-to="6"></li>
-        <li data-target="#carousel-wrapper" data-slide-to="7"></li>
-      </ol>
+  <div class="pokemonWrapper" *ngIf="data">
+    <mat-tab-group>
+      <mat-tab label="Normal Front">
+        <h1>{{data.name}}</h1>
+        <img src={{data.sprites.front_default}} alt="No Image Available"
+          style="width:100%; max-height: 400px; object-fit: contain;">
+      </mat-tab>
 
-      <div class="carousel-inner" data-bs-interval=false>
-        <div class="item active" style="height: 400px;" data-bs-interval=false>
-          <h1>{{data.name}}</h1>
-          <img src={{data.sprites.front_default}} alt="slide one"
-            style="width:100%; max-height: 400px; object-fit: contain;">
-        </div>
+      <mat-tab label="Normal Back">
+        <h1>{{data.name}}</h1>
+        <img src={{data.sprites.back_default}} alt="No Image Available"
+          style="width:100%; max-height: 400px; object-fit: contain;">
+      </mat-tab>
 
-        <div class="item" style="height: 400px;" data-bs-interval=false>
-          <h1>{{data.name}}</h1>
-          <img src={{data.sprites.back_default}} alt="slide two"
-            style="width:100%; max-height: 400px; object-fit: contain;">
-        </div>
+      <mat-tab label="Shiny Front">
+        <h1>{{data.name}} Shiny</h1>
+        <img src={{data.sprites.front_shiny}} alt="No Shiny Available"
+          style="width:100%; max-height: 400px; object-fit: contain;">
+      </mat-tab>
 
-        <div class="item" style="height: 400px;" data-bs-interval=false>
-          <h1>{{data.name}} Female</h1>
-          <img src={{data.sprites.front_female}} alt="No Female"
-            style="width:100%; max-height: 400px; object-fit: contain;">
-        </div>
+      <mat-tab label="Shiny Back">
+        <h1>{{data.name}} Shiny</h1>
+        <img src={{data.sprites.back_shiny}} alt="No Shiny Available"
+          style="width:100%; max-height: 400px; object-fit: contain;">
+      </mat-tab>
 
-        <div class="item" style="height: 400px;" data-bs-interval=false>
-          <h1>{{data.name}} Female</h1>
-          <img src={{data.sprites.back_female}} alt="No Female"
-            style="width:100%; max-height: 400px; object-fit: contain;">
-        </div>
+      <mat-tab label="Female Front">
+        <h1>{{data.name}} Female</h1>
+        <img src={{data.sprites.front_female}} alt="No Female"
+          style="width:100%; max-height: 400px; object-fit: contain;">
+      </mat-tab>
 
-        <div class="item" style="height: 400px;" data-bs-interval=false>
-          <h1>{{data.name}} Shiny</h1>
-          <img src={{data.sprites.front_shiny}} alt="slide five"
-            style="width:100%; max-height: 400px; object-fit: contain;">
-        </div>
+      <mat-tab label="Female Back">
+        <h1>{{data.name}} Female</h1>
+        <img src={{data.sprites.back_female}} alt="No Female"
+          style="width:100%; max-height: 400px; object-fit: contain;">
+      </mat-tab>
 
-        <div class="item" style="height: 400px;" data-bs-interval=false>
-          <h1>{{data.name}} Shiny</h1>
-          <img src={{data.sprites.back_shiny}} alt="slide six"
-            style="width:100%; max-height: 400px; object-fit: contain;">
-        </div>
+      <mat-tab label="Shiny Female Front">
+        <h1>{{data.name}} Shiny Female</h1>
+        <img src={{data.sprites.front_shiny_female}} alt="No Female Shiny"
+          style="width:100%; max-height: 400px; object-fit: contain;">
+      </mat-tab>
 
-        <div class="item" style="height: 400px;" data-bs-interval=false>
-          <h1>{{data.name}} Shiny Female</h1>
-          <img src={{data.sprites.front_shiny_female}} alt="No Female Shiny"
-            style="width:100%; max-height: 400px; object-fit: contain;">
-        </div>
+      <mat-tab label="Shiny Female Back">
+        <h1>{{data.name}} Shiny Female</h1>
+        <img src={{data.sprites.back_shiny_female}} alt="No Female Shiny"
+          style="width:100%; max-height: 400px; object-fit: contain;">
+      </mat-tab>
+    </mat-tab-group>
 
-        <div class="item" style="height: 400px;" data-bs-interval=false>
-          <h1>{{data.name}} Shiny Female</h1>
-          <img src={{data.sprites.back_shiny_female}} alt="No Female Shiny"
-            style="width:100%; max-height: 400px; object-fit: contain;">
-        </div>
-      </div>
-
-      <a class="left carousel-control" href="#carousel-wrapper" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#carousel-wrapper" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
+    <!-- ==================================================================================== -->
+    <!-- ==================================================================================== -->
 
     <div class="pokemonCard" *ngIf="data">
-      <div class="idWrapper">
-        <p class="name">Name: {{data.name}}</p>
-        <p class="id">Number: {{data.id}}</p>
-        <p class="species">Species: {{data.species.url}}</p>
-      </div>
+      <mat-accordion multi>
 
-      <ul>
-        <span>Types</span>
-        <li class="types" *ngFor="let types of data.types; let i = index;">
-          {{ i + 1 }} - {{data.types[i].type.name}}
-        </li><br>
+        <!-- Name and ID -->
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Name and ID
+            </mat-panel-title>
+            <mat-panel-description>
+              The Name and ID of the selected pokemon
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="idWrapper">
+            <p class="name">Name: {{data.name}}</p>
+            <p class="id">Number: {{data.id}}</p>
+            <p class="species">Species: {{data.species.url}}</p>
+          </div>
+        </mat-expansion-panel>
 
-        <span>Abilities</span>
-        <li class="abilities" *ngFor="let abilities of data.abilities; let i = index;">
-          {{ i + 1 }} - {{data.abilities[i].ability.name}}
-        </li><br>
+        <!-- Types -->
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Types
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="types" *ngFor="let types of data.types; let i = index;">
+            {{ i + 1 }} - {{data.types[i].type.name}}
+          </div>
+        </mat-expansion-panel>
 
-        <span>Stats</span>
-        <table class="table table-dark table-striped">
-          <tbody>
-            <tr class="table-dark" *ngFor="let stats of data.stats; let i = index;">
-              <td>{{ i + 1 }}</td>
+        <!-- Abilities -->
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Abilities
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="abilities" *ngFor="let abilities of data.abilities; let i = index;">
+            {{ i + 1 }} - {{data.abilities[i].ability.name}}
+          </div>
+        </mat-expansion-panel>
+
+        <!-- Stats -->
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Stats
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <table matTable>
+            <tr *ngFor="let stats of data.stats; let i = index;">
               <td>{{data.stats[i].stat.name}}: {{data.stats[i].base_stat}}</td>
             </tr>
-          </tbody>
-        </table>
-        <br>
+          </table>
+        </mat-expansion-panel>
 
-        <span>Moveset</span>
-        <li class="moves" *ngFor="let move of data.moves; let i = index;">
-          {{ i + 1 }} - {{data.moves[i].move.name}}
-        </li><br>
+        <!-- Moveset -->
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Moveset
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="moves" *ngFor="let move of data.moves; let i = index;">
+            {{ i + 1 }} - {{data.moves[i].move.name}}
+          </div>
+        </mat-expansion-panel>
 
-        <span>Physical Data</span>
-        <li class="height">
-          Height: {{data.height}}
-        </li>
+        <!-- Physical Data -->
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Physical Data
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="height">
+            Height: {{data.height}}
+          </div>
 
-        <li class="weight">
-          Weight: {{data.weight}}
-        </li><br>
+          <div class="weight">
+            Weight: {{data.weight}}
+          </div>
+        </mat-expansion-panel>
 
-        <span>Games</span>
-        <li class="games" *ngFor="let games of data.game_indices; let i = index;">
-          {{ i + 1 }} - {{data.game_indices[i].version.name}}
-        </li><br>
-      </ul>
+        <!-- Games -->
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Games
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="games" *ngFor="let games of data.game_indices; let i = index;">
+            {{ i + 1 }} - {{data.game_indices[i].version.name}}
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
     </div>
   </div>
 </mat-card>
