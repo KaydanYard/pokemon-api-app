@@ -1,16 +1,24 @@
+// App Imports
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+// Firebase Imports
+import { environment } from "src/environments/environment";
+import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+
+// Components Imports
 import { PokefindComponent } from './components/pokefind/pokefind.component';
 import { HomeComponent } from './components/home/home.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { LoginComponent } from './components/login/login.component';
 
+// Angular Mat Imports
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -22,6 +30,9 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
+import { AuthenticationService } from './services/authentication.service';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 
 
 @NgModule({
@@ -29,7 +40,10 @@ import { MatTabsModule } from '@angular/material/tabs';
     AppComponent,
     PokefindComponent,
     HomeComponent,
-    SignupComponent
+    SignupComponent,
+    LoginComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent
   ],
   imports: [
     AppRoutingModule,
@@ -48,9 +62,12 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatSelectModule,
     MatTableModule,
     MatTabsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+    provideFirebaseApp(() => initializeApp({})),
+    provideFirestore(() => getFirestore()),
   ],
-  providers: [],
+  providers: [AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
