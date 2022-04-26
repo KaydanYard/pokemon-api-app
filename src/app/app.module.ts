@@ -7,10 +7,12 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-// Firebase Imports
-import { environment } from "src/environments/environment";
-import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from '../environments/environment';
 
 // Components Imports
 import { PokefindComponent } from './components/pokefind/pokefind.component';
@@ -33,6 +35,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { AuthenticationService } from './services/authentication.service';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -43,7 +46,8 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
     SignupComponent,
     LoginComponent,
     ForgotPasswordComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    DashboardComponent
   ],
   imports: [
     AppRoutingModule,
@@ -64,8 +68,12 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
     MatTabsModule,
     ReactiveFormsModule,
 
-    provideFirebaseApp(() => initializeApp({})),
-    provideFirestore(() => getFirestore()),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    AppRoutingModule,
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]

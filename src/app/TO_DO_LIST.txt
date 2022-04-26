@@ -9,8 +9,9 @@ TO DO list
 
 ✅ 4. Create a sign up page in the components folder
 ✅ 5. Link Firebase Authentication to the sign up page
-  📍 5.1. Create mock profiles on Firebase and use them to log in
-  ❌ 5.2. Add sign up functionality to the sign up page to create new profiles
+  ✅ 5.1. Create mock profiles on Firebase and use them to log in
+  ✅ 5.2. Add sign up functionality to the sign up page to create new profiles
+  ❌ 5.3. Reinstate Pokefind and the Home Page
 ❌ 6. Add login functionality to the home page
 
 When Authentication is added use this repo: 
@@ -30,6 +31,6 @@ BUGS
 
 STYLING
 --------------------------------------------------
-❌ 0.5. Fix the following components using Bootstrap: Login, Sign Up, Forgot Password, Verify Email 
+📍 0.5. Fix the following components using Bootstrap: Login, Sign Up, Forgot Password, Verify Email 
 ❌ 1. Style the Nav Bar by using mat-buttons instead of regular links
 ❌ 2. Add more Styles to the home component

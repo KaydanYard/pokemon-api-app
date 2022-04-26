@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  firebaseConfig: {
+  firebase: {
     apiKey: "AIzaSyCGfyTqJ9zpuOgnzF8Fl9tC9jVlCmHvJvE",
     authDomain: "pokemon-api-app-ff02b.firebaseapp.com",
     projectId: "pokemon-api-app-ff02b",
