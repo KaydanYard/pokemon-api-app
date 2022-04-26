@@ -16,20 +16,4 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  // loginForm = new FormGroup({
-  //   username: new FormControl('', Validators.required),
-  //   password: new FormControl(['', Validators.required, Validators.minLength(5)])
-  // });
-
-  // onSubmit() {
-  //   this.login()
-  // }
-
-  // login(): void {
-  //   let username = this.loginForm.get('username').value;
-  //   let password = this.loginForm.get('password').value;
-  //   this.authenticationService.login(username, password).subscribe(() => this.router.navigateByUrl("/"));
-  // }
-
 }

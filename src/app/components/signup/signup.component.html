@@ -1,86 +1,39 @@
-<div class="displayTable">
-  <div class="displayTableCell">
-    <div class="authBlock">
-      <h3>Sign Up</h3>
-      <div class="formGroup">
-        <input type="email" class="formControl" placeholder="Email Address" #userEmail required />
-      </div>
-      <div class="formGroup">
-        <input type="password" class="formControl" placeholder="Password" #userPwd required />
-      </div>
-      <div class="formGroup">
-        <input type="button" class="btn btnPrimary" value="Sign Up"
-          (click)="authenticationService.SignUp(userEmail.value, userPwd.value)" />
-      </div>
-      <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
-      </div>
-      <!-- Continue with Google -->
-      <div class="formGroup">
-        <button type="button" class="btn googleBtn" (click)="authenticationService.GoogleAuth()">
-          <i class="fab fa-google-plus-g"></i>
-          Continue with Google
-        </button>
-      </div>
+<mat-card>
+  <div class="authBlock">
+    <h3>Sign Up</h3>
+
+    <mat-form-field appearance="fill">
+      <input matInput type="email" class="formControl" placeholder="Email Address" #userEmail required />
+    </mat-form-field><br>
+
+    <mat-form-field appearance="fill">
+      <input matInput type="password" class="formControl" placeholder="Password" #userPwd required />
+    </mat-form-field>
+
+
+    <div class="formGroup">
+      <button mat-raised-button color="warn" value="Sign Up"
+        (click)="authenticationService.SignUp(userEmail.value, userPwd.value)">Sign Up</button>
     </div>
-    <div class="redirectToLogin">
-      <span>Already have an account?
-        <span class="redirect" routerLink="/sign-in">Log In</span></span>
+
+    <!-- | COME BACK LATER | -->
+    <div class="formGroup">
+      <span class="or"><span class="orInner">Or</span></span>
+    </div>
+
+    <!-- Continue with Google -->
+    <div class="formGroup">
+      <button mat-raised-button color="warn" type="button" class="btn googleBtn"
+        (click)="authenticationService.GoogleAuth()">
+        <!-- | COME BACK LATER | -->
+        <i class="fab fa-google-plus-g"></i>
+        Continue with Google
+      </button>
     </div>
   </div>
-</div>
 
-<!-- <mat-card>
-  <mat-card-header>
-    <mat-card-title>Sign Up</mat-card-title>
-
-    <a routerLink="/">
-      <button mat-raised-button>
-        <mat-card-subtitle>Home</mat-card-subtitle>
-      </button>
-    </a>
-
-    <a routerLink="/pokefind">
-      <button mat-raised-button>
-        <mat-card-subtitle>Pokéfind</mat-card-subtitle>
-      </button>
-    </a>
-
-    <a routerLink="/signup">
-      <button mat-raised-button>
-        <mat-card-subtitle>Sign Up</mat-card-subtitle>
-      </button>
-    </a>
-  </mat-card-header>
-
-  <mat-card-content>
-    <div class="form-container"> -->
-<!-- Email Field
-      <mat-form-field appearance="fill">
-        <mat-label>Enter your email</mat-label>
-        <input matInput class="email-field-input" [formControl]="email" required>
-        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-      </mat-form-field><br> -->
-
-<!-- Username Field
-      <mat-form-field appearance="fill">
-        <mat-label>Enter a username</mat-label>
-        <input matInput class="username-field-input" [formControl]="username" required>
-        <mat-error *ngIf="username.invalid">{{getErrorMessage()}}</mat-error>
-      </mat-form-field><br> -->
-
-<!-- Password Field
-      <mat-form-field appearance="fill">
-        <mat-label>Create your password</mat-label>
-        <input matInput class="password-field-input" [type]="hide ? 'password' : 'text'" required>
-        <mat-error *ngIf="password.invalid">{{getErrorMessage()}}</mat-error>
-        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-          [attr.aria-pressed]="hide">
-          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </button>
-      </mat-form-field><br>
-
-      <button mat-raised-button type="submit">Submit</button>
-    </div>
-  </mat-card-content>
-</mat-card> -->
+  <div class="redirectToLogin">
+    <span>Already have an account?
+      <button mat-button color="accent" routerLink="/login">Log In</button></span>
+  </div>
+</mat-card>

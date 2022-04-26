@@ -31,6 +31,6 @@ BUGS
 
 STYLING
 --------------------------------------------------
-📍 0.5. Fix the following components using Bootstrap: Login, Sign Up, Forgot Password, Verify Email 
+📍 0.5. Fix the following components using Bootstrap: 📍Login, ⚠️Sign Up, ⚠️Forgot Password, ⚠️Verify Email 
 ❌ 1. Style the Nav Bar by using mat-buttons instead of regular links
 ❌ 2. Add more Styles to the home component

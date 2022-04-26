@@ -13,6 +13,11 @@ Link to the Github Typescript Documentation for the PokeAPI
 Link to Pokenode-ts Documentation
 (`https://pokenode-ts-docs-gabb-c.vercel.app/`)
 
+## Authentication Resource
+
+Link to Github repo that helped build my authentication
+(`https://github.com/SinghDigamber/angularfirebase-authentication`)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
