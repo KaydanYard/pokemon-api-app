@@ -140,31 +140,3 @@ export class AuthenticationService {
     });
   }
 }
-
-  // Mock Authentication
-
-  // fakeUsername: string = "username";
-  // fakePassword: string = "password";
-
-  // login(username: string, password: string): Observable<any> {
-  //   // Mock a successful call to an API server.
-  //   if (username == this.fakeUsername && password == this.fakePassword) {
-  //     localStorage.setItem("token", "my-super-secret-token-from-server");
-  //     return of(new HttpResponse({ status: 200 }));
-  //   } else {
-  //     return of(new HttpResponse({ status: 401 }));
-  //   }
-  // }
-
-  // constructor(){}
-
-  // logout(): void {
-  //   localStorage.removeItem("token");
-  // }
-
-  // isUserLoggedIn(): boolean {
-  //   if (localStorage.getItem("token") != null) {
-  //     return true;
-  //   }
-  //   return false;
-  // }

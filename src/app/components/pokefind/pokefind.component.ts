@@ -10,7 +10,6 @@ import { ApiService } from 'src/app/services/api.service';
 
 export class PokefindComponent implements OnInit {
   data: any;
-  // pokemonId: any | undefined;
 
   constructor(
     private apiService: ApiService,

@@ -1,28 +1,17 @@
+<head>
+  <div id="page-name-setter">Poké Home</div>
+</head>
+
 <mat-card>
   <mat-card-header>
-    <mat-card-title>Poké Home</mat-card-title>
-
-    <a routerLink="/">
-      <button mat-raised-button>
-        <mat-card-subtitle>Home</mat-card-subtitle>
-      </button>
-    </a>
-
-    <a routerLink="/pokefind">
-      <button mat-raised-button>
-        <mat-card-subtitle>Pokéfind</mat-card-subtitle>
-      </button>
-    </a>
-
-    <a routerLink="/sign-up">
-      <button mat-raised-button>
-        <mat-card-subtitle>Sign Up</mat-card-subtitle>
-      </button>
-    </a>
+    <mat-card-title>
+      <app-navbar></app-navbar>
+    </mat-card-title>
   </mat-card-header>
 
   <mat-card-content>
-    <p>Find Pokemon and favorite them. Look through their stats and movesets to find the pokemon that suits you. Admire
+    <p>Find Pokemon and favorite them. Look through their stats and movesets to find the pokemon that suits you.
+      Admire
       your favorited pokemon list and look at their descriptions.</p>
   </mat-card-content>
 </mat-card>

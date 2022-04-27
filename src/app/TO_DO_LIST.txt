@@ -19,7 +19,7 @@ to add the favorite button
   ✅ 5.2. Add sign up functionality to the sign up page to create new profiles
   ✅ 5.3. Reinstate Pokefind and the Home Page through routing
 ✅ 6. Add login functionality to the home page
-  ❌ 6.1. Make it easier to navigate the app.
+  📍 6.1. Make it easier to navigate the app.
 
 ❌ 7. Add a Paginator to the bottom of the Pokéfind page
 ❌ 8. Add more content to the home component
@@ -27,7 +27,7 @@ to add the favorite button
 
 STYLING
 --------------------------------------------------
-📍 0.5. Fix the following components using Bootstrap: ✅Login, ✅Sign Up, 📍Forgot Password, ⚠️Verify Email, ⚠️Dashboard
+📍 0.5. Fix the following components using Bootstrap: ✅ Login, ✅ Sign Up, 📍 Forgot Password, ⚠️ Verify Email, ⚠️ Dashboard
 ❌ 1. Style the Nav Bar by using mat-buttons instead of regular links
 ❌ 2. Add more Styles to the home component
 
