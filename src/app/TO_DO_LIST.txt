@@ -21,14 +21,15 @@ to add the favorite button
   ✅ 6.1. Make it easier to navigate the app.
   ❌ 6.2. Fix bug #3
 
-📍 7. Add a Paginator to the bottom of the Pokéfind page
-❌ 8. Add more content to the home component
+✅ 7. Add a Paginator to the bottom of the Pokéfind page
+📍 8. Add more content to the home component
 
 
 STYLING
 --------------------------------------------------
 ✅ 0.5. Fix the following components using Bootstrap: ✅ Login, ✅ Sign Up, ✅ Forgot Password, ✅ Verify Email, ✅ Dashboard
 ✅ 1. Style the Nav Bar by using mat-buttons instead of regular links
+  ❌ 1.1. Add spacing to the Nav Bar
 ❌ 2. Add more Styles to the home component
 
 
