@@ -1,22 +1,21 @@
-<div class="displayTable">
-  <div class="displayTableCell">
-    <div class="authBlock">
-      <h3>Thank You for Registering</h3>
-      <div class="formGroup" *ngIf="authenticationService.userData as user">
-        <p class="text-center">We have sent a confirmation email to <strong>{{user.email}}</strong>.</p>
-        <p class="text-center">Please check your email and click on the link to verfiy your email address.</p>
-      </div>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Thank You for Registering</mat-card-title>
+    <mat-card-subtitle class="formGroup" *ngIf="authenticationService.userData as user">
+      <p>We have sent a confirmation email to <strong>{{user.email}}</strong>.</p>
+      <p>Please check your email and click on the link to verfiy your email address.</p>
+    </mat-card-subtitle>
+  </mat-card-header>
 
-      <!-- Calling SendVerificationMail() method using authenticationService Api -->
-      <div class="formGroup">
-        <button type="button" class="btn btnPrimary" (click)="authenticationService.SendVerificationMail()">
-          <i class="fas fa-redo-alt"></i>
-          Resend Verification Email
-        </button>
-      </div>
-    </div>
-    <div class="redirectToLogin">
-      <span>Go back to?<span class="redirect" routerLink="/sign-in"> Sign in</span></span>
-    </div>
+  <!-- Calling SendVerificationMail() method using authenticationService Api -->
+  <mat-card-content>
+    <button mat-stroked-button (click)="authenticationService.SendVerificationMail()">
+      Resend Verification Email
+    </button>
+  </mat-card-content>
+
+  <div class="redirectToLogin">
+    <span>Go back to <button mat-button color="accent" routerLink="/login"> Log In</button>?</span>
   </div>
-</div>
+
+</mat-card>
