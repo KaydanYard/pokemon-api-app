@@ -1,5 +1,4 @@
 
-
 TO DO list
 --------------------------------------------------
 
@@ -27,7 +26,7 @@ to add the favorite button
 
 STYLING
 --------------------------------------------------
-📍 0.5. Fix the following components using Bootstrap: ✅ Login, ✅ Sign Up, 📍 Forgot Password, ⚠️ Verify Email, ⚠️ Dashboard
+📍 0.5. Fix the following components using Bootstrap: ✅ Login, ✅ Sign Up, 📍 Forgot Password, ⚠️ Verify Email, ✅ Dashboard
 ❌ 1. Style the Nav Bar by using mat-buttons instead of regular links
 ❌ 2. Add more Styles to the home component
 
@@ -38,3 +37,7 @@ BUGS
 ✅ 1. The Nav Bar is adding the router link to the end of the current url.  
    This is causing it to have trouble navigating from the Sign Up page to the Pokéfind page.
    (Try clearing the old route then add the new route)
+
+✅ 2. The title of the navbar was delayed and would display the incorrect title for the page.
+
+❌ 3. To login you have to click the Log In button twice.  This is annoying.

@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 
+
 export class AuthenticationService {
   userData: any; // Save logged in user data
 
@@ -38,7 +39,7 @@ export class AuthenticationService {
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['dashboard'])
         });
         this.SetUserData(result.user);
       })
@@ -136,7 +137,7 @@ export class AuthenticationService {
   SignOut() {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
-      this.router.navigate(['sign-in']);
+      this.router.navigate(['login']);
     });
   }
 }

@@ -1,0 +1,13 @@
+mat-toolbar {
+
+  #navbar-wrapper {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+
+    .navbar-contents {
+      margin-left: 20px;
+    }
+  }
+}

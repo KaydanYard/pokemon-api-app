@@ -1,35 +1,46 @@
 <mat-toolbar>
-  <label id="page-name">{{selectedPage}}</label>
-  <span class="example-spacer"></span>
+  <div id="navbar-wrapper">
+    <div class="navbar-title">
+      <label id="page-name">{{selectedPage | titlecase}}</label>
+    </div>
 
-  <a routerLink="/home">
-    <button mat-raised-button>
-      Home
-    </button>
-  </a>
+    <div class="navbar-contents">
+      <a routerLink="/home">
+        <button mat-raised-button>
+          Home
+        </button>
+      </a>
 
-  <a routerLink="/pokefind">
-    <button mat-raised-button>
-      Pokéfind
-    </button>
-  </a>
+      <a routerLink="/pokefind">
+        <button mat-raised-button>
+          Pokéfind
+        </button>
+      </a>
 
-  <a routerLink="/dashboard">
-    <button mat-raised-button>
-      Dashboard
-    </button>
-  </a>
+      <a *ngIf="signedIn" routerLink="/dashboard">
+        <button mat-raised-button>
+          Dashboard
+        </button>
+      </a>
 
-  <a routerLink="/login">
-    <button mat-raised-button>
-      Login
-    </button>
-  </a>
+      <a *ngIf="signedIn" routerLink="/login">
+        <button mat-raised-button (click)="authenticationService.SignOut()">
+          Log Out
+        </button>
+      </a>
 
-  <a routerLink="/sign-up">
-    <button mat-raised-button>
-      Sign Up
-    </button>
-  </a>
+      <a *ngIf="!signedIn" routerLink="/login">
+        <button mat-raised-button>
+          Login
+        </button>
+      </a>
 
+      <a *ngIf="!signedIn" routerLink="/sign-up">
+        <button mat-raised-button>
+          Sign Up
+        </button>
+      </a>
+
+    </div>
+  </div>
 </mat-toolbar>
