@@ -4,7 +4,7 @@
 
 <mat-card>
   <mat-card-header>
-    <app-navbar></app-navbar>
+    <app-navbar style="width: 100%;"></app-navbar>
   </mat-card-header>
 
   <mat-form-field appearance="fill">
@@ -24,16 +24,24 @@
   <!-- ==================================================================================== -->
   <!-- ==================================================================================== -->
 
+  <!-- <app-pokemon-image></app-pokemon-image> -->
+
   <div class="pokemonWrapper" *ngIf="data">
     <mat-tab-group>
       <mat-tab label="Normal Front">
         <h1>{{data.name | titlecase}}</h1>
+        <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite()" aria-label="icon-button with heart icon">
+          <mat-icon>{{favoriteText}}</mat-icon>
+        </button>
         <img src={{data.sprites.front_default}} alt="No Image Available"
           style="width:100%; max-height: 400px; object-fit: contain;">
       </mat-tab>
 
       <mat-tab label="Normal Back">
         <h1>{{data.name | titlecase}}</h1>
+        <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite()" aria-label="icon-button with heart icon">
+          <mat-icon>{{favoriteText}}</mat-icon>
+        </button>
         <img src={{data.sprites.back_default}} alt="No Image Available"
           style="width:100%; max-height: 400px; object-fit: contain;">
       </mat-tab>

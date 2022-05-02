@@ -4,7 +4,7 @@ TO DO list
 
 ✅ 1. Take out the carousel and the unordered list styles that rely on Bootstrap
 ✅ 2. Replace them with their Angular Material counterparts (carousel replaced with Tabs)
-❌ 3. Work on adding a favorites function to pokefind and add a new component called favorites
+📍 3. Work on adding a favorites function to pokefind and add a new component called favorites
 (must add authentication to implement the favorites function)
 
 When Authentication is added use this repo: 
@@ -22,15 +22,17 @@ to add the favorite button
   ❌ 6.2. Fix bug #3
 
 ✅ 7. Add a Paginator to the bottom of the Pokéfind page
-📍 8. Add more content to the home component
+❌ 8. Add more content to the home component
+❌ 9. Add Mega forms and other unique forms for pokémon
 
 
 STYLING
 --------------------------------------------------
 ✅ 0.5. Fix the following components using Bootstrap: ✅ Login, ✅ Sign Up, ✅ Forgot Password, ✅ Verify Email, ✅ Dashboard
 ✅ 1. Style the Nav Bar by using mat-buttons instead of regular links
-  ❌ 1.1. Add spacing to the Nav Bar
+  ✅ 1.1. Add spacing to the Nav Bar
 ❌ 2. Add more Styles to the home component
+❌ 3. Center the login and sign up content
 
 
 BUGS

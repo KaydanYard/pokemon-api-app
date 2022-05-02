@@ -8,6 +8,10 @@ mat-toolbar {
 
     .navbar-contents {
       margin-left: 20px;
+
+      a {
+        margin-left: 5px;
+      }
     }
   }
 }

@@ -24,6 +24,10 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 
+// Helper Components Imports
+import { NavbarComponent } from './helpers/navbar/navbar.component';
+import { PokemonImageComponent } from './helpers/pokemon-image/pokemon-image.component';
+
 // Angular Mat Imports
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -41,7 +45,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 // Services Imports
 import { AuthenticationService } from './services/authentication.service';
-import { NavbarComponent } from './helpers/navbar/navbar.component';
 
 
 @NgModule({
@@ -54,7 +57,8 @@ import { NavbarComponent } from './helpers/navbar/navbar.component';
     ForgotPasswordComponent,
     VerifyEmailComponent,
     DashboardComponent,
-    NavbarComponent
+    NavbarComponent,
+    PokemonImageComponent
   ],
   imports: [
     AppRoutingModule,
