@@ -23,7 +23,7 @@
         </button>
       </a>
 
-      <a *ngIf="signedIn" routerLink="/login">
+      <a *ngIf="signedIn">
         <button mat-raised-button (click)="authenticationService.SignOut()">
           Log Out
         </button>

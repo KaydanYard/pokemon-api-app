@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { PageEvent } from '@angular/material/paginator';
 import { ApiService } from 'src/app/services/api.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
@@ -27,8 +28,12 @@ export class PokefindComponent implements OnInit {
   pageEvent: PageEvent;
   signedIn: boolean;
 
+  myArray: any[] = []
+
   constructor(
-    private apiService: ApiService, public authenticationService: AuthenticationService
+    private firestore: AngularFirestore,
+    private apiService: ApiService,
+    public authenticationService: AuthenticationService,
   ) { }
 
   ngOnInit(): void {
@@ -40,29 +45,47 @@ export class PokefindComponent implements OnInit {
   displayPokemon(pokemonId: any) {
     this.apiService.getPokemon(pokemonId).subscribe((pokemon: any) => {
       this.data = pokemon;
+      console.log(this.data)
       this.pageIndex = pokemonId;
+      this.favorite = false;
+      this.firestore.collection(`users/${this.authenticationService.userData.uid}/favorites`)
+        .get()
+        .subscribe((ss) => {
+          ss.docs.forEach((doc) => {
+            this.data.documentID = doc.id
+            if (doc.get("pokemonID") == this.pageIndex) {
+              this.favorite = true;
+              return this.displayFavorite()
+            }
+          });
+        });
       this.displayFavorite()
     })
   }
 
   displayFavorite() {
+
     if (this.favorite == true) {
       this.favoriteText = 'favorite'
     } else if (this.favorite == false) {
       this.favoriteText = 'favorite_border'
     } else {
+      this.favorite = false
       this.favoriteText = 'favorite_border'
     }
   }
 
-  checkFavorite() {
+  checkFavorite(pokeName: string, pokeID: number, selectedDoc: string) {
+
     if (this.favorite == true) {
       this.favorite = false;
-      console.log(this.favorite)
+      this.firestore.collection(`users/${this.authenticationService.userData.uid}/favorites`)
+        .doc(selectedDoc).delete()
       this.displayFavorite()
     } else {
       this.favorite = true;
-      console.log(this.favorite)
+      this.firestore.collection(`users/${this.authenticationService.userData.uid}/favorites`)
+        .add({ pokemonName: pokeName, pokemonID: pokeID })
       this.displayFavorite()
     }
   }

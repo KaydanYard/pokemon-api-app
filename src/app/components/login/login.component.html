@@ -3,38 +3,39 @@
     <app-navbar style="width: 100%;"></app-navbar>
   </mat-card-header>
 
-  <mat-form-field appearance="fill">
-    <input matInput type="text" class="formControl" placeholder="Username" #userName required>
-  </mat-form-field><br>
+  <mat-card-content>
+    <mat-form-field appearance="fill">
+      <input matInput type="text" class="formControl" placeholder="Username" #userName required>
+    </mat-form-field><br>
 
-  <mat-form-field appearance="fill">
-    <input matInput type="password" class="formControl" placeholder="Password" #userPassword required>
-  </mat-form-field>
+    <mat-form-field appearance="fill">
+      <input matInput type="password" class="formControl" placeholder="Password" #userPassword required>
+    </mat-form-field>
 
 
-  <!-- Calling SignIn Api from authenticationService -->
-  <div class="formGroup">
-    <button mat-raised-button color="accent" value="Log in"
-      (click)="authenticationService.SignIn(userName.value, userPassword.value)">Log in</button>
-  </div>
+    <!-- Calling SignIn Api from authenticationService -->
+    <div class="formGroup">
+      <button mat-raised-button color="accent" value="Log in"
+        (click)="authenticationService.SignIn(userName.value, userPassword.value)">Log in</button>
+    </div>
 
-  <!-- | COME BACK LATER | -->
-  <div class="formGroup">
-    <span class="or"><span class="orInner">Or</span></span>
-  </div>
+    <!-- | COME BACK LATER | -->
+    <div class="formGroup">
+      <span class="or"><span class="orInner">Or</span></span>
+    </div>
 
-  <!-- Calling GoogleAuth Api from authenticationService -->
-  <div class="formGroup">
-    <button mat-raised-button color="accent" (click)="authenticationService.GoogleAuth()">
-      <!-- | COME BACK LATER | -->
-      <mat-icon aria-hidden="false" aria-label="Example google icon">google</mat-icon>
-      Log in with Google
-    </button>
-  </div>
+    <!-- Calling GoogleAuth Api from authenticationService -->
+    <div class="formGroup">
+      <button mat-raised-button color="accent" (click)="authenticationService.GoogleAuth()">
+        <mat-icon aria-hidden="false" aria-label="Example google icon">mail</mat-icon>
+        Log in with Google
+      </button>
+    </div>
 
-  <div class="forgotPassword">
-    <button mat-button color="accent" routerLink="/forgot-password">Forgot Password?</button>
-  </div>
+    <div class="forgotPassword">
+      <button mat-button color="accent" routerLink="/forgot-password">Forgot Password?</button>
+    </div>
+  </mat-card-content>
 
   <div class="redirectToLogin">
     <span>Don't have an account?<button mat-button color="warn" routerLink="/sign-up"> Sign Up</button></span>

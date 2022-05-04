@@ -1,10 +1,7 @@
-<head>
-  <div id="page-name-setter">Pokéfind</div>
-</head>
-
 <mat-card>
   <mat-card-header>
     <app-navbar style="width: 100%;"></app-navbar>
+
   </mat-card-header>
 
   <mat-form-field appearance="fill">
@@ -29,8 +26,9 @@
   <div class="pokemonWrapper" *ngIf="data">
     <mat-tab-group>
       <mat-tab label="Normal Front">
-        <h1>{{data.name | titlecase}}</h1>
-        <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite()" aria-label="icon-button with heart icon">
+        <h1>{{data.species.name | titlecase}}</h1>
+        <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite(data.name, data.id, data.documentID)"
+          aria-label="icon-button with heart icon">
           <mat-icon>{{favoriteText}}</mat-icon>
         </button>
         <img src={{data.sprites.front_default}} alt="No Image Available"
@@ -38,8 +36,9 @@
       </mat-tab>
 
       <mat-tab label="Normal Back">
-        <h1>{{data.name | titlecase}}</h1>
-        <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite()" aria-label="icon-button with heart icon">
+        <h1>{{data.species.name | titlecase}}</h1>
+        <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite(data.name, data.id, data.documentID)"
+          aria-label="icon-button with heart icon">
           <mat-icon>{{favoriteText}}</mat-icon>
         </button>
         <img src={{data.sprites.back_default}} alt="No Image Available"
@@ -47,37 +46,61 @@
       </mat-tab>
 
       <mat-tab label="Shiny Front">
-        <h1>{{data.name | titlecase}} Shiny</h1>
+        <h1>{{data.species.name | titlecase}} Shiny</h1>
+        <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite(data.name, data.id, data.documentID)"
+          aria-label="icon-button with heart icon">
+          <mat-icon>{{favoriteText}}</mat-icon>
+        </button>
         <img src={{data.sprites.front_shiny}} alt="No Shiny Available"
           style="width:100%; max-height: 400px; object-fit: contain;">
       </mat-tab>
 
       <mat-tab label="Shiny Back">
-        <h1>{{data.name | titlecase}} Shiny</h1>
+        <h1>{{data.species.name | titlecase}} Shiny</h1>
+        <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite(data.name, data.id, data.documentID)"
+          aria-label="icon-button with heart icon">
+          <mat-icon>{{favoriteText}}</mat-icon>
+        </button>
         <img src={{data.sprites.back_shiny}} alt="No Shiny Available"
           style="width:100%; max-height: 400px; object-fit: contain;">
       </mat-tab>
 
       <mat-tab label="Female Front">
-        <h1>{{data.name | titlecase}} Female</h1>
+        <h1>{{data.species.name | titlecase}} Female</h1>
+        <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite(data.name, data.id, data.documentID)"
+          aria-label="icon-button with heart icon">
+          <mat-icon>{{favoriteText}}</mat-icon>
+        </button>
         <img src={{data.sprites.front_female}} alt="No Female"
           style="width:100%; max-height: 400px; object-fit: contain;">
       </mat-tab>
 
       <mat-tab label="Female Back">
-        <h1>{{data.name | titlecase}} Female</h1>
+        <h1>{{data.species.name | titlecase}} Female</h1>
+        <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite(data.name, data.id, data.documentID)"
+          aria-label="icon-button with heart icon">
+          <mat-icon>{{favoriteText}}</mat-icon>
+        </button>
         <img src={{data.sprites.back_female}} alt="No Female"
           style="width:100%; max-height: 400px; object-fit: contain;">
       </mat-tab>
 
       <mat-tab label="Shiny Female Front">
-        <h1>{{data.name | titlecase}} Shiny Female</h1>
+        <h1>{{data.species.name | titlecase}} Shiny Female</h1>
+        <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite(data.name, data.id, data.documentID)"
+          aria-label="icon-button with heart icon">
+          <mat-icon>{{favoriteText}}</mat-icon>
+        </button>
         <img src={{data.sprites.front_shiny_female}} alt="No Female Shiny"
           style="width:100%; max-height: 400px; object-fit: contain;">
       </mat-tab>
 
       <mat-tab label="Shiny Female Back">
-        <h1>{{data.name | titlecase}} Shiny Female</h1>
+        <h1>{{data.species.name | titlecase}} Shiny Female</h1>
+        <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite(data.name, data.id, data.documentID)"
+          aria-label="icon-button with heart icon">
+          <mat-icon>{{favoriteText}}</mat-icon>
+        </button>
         <img src={{data.sprites.back_shiny_female}} alt="No Female Shiny"
           style="width:100%; max-height: 400px; object-fit: contain;">
       </mat-tab>
