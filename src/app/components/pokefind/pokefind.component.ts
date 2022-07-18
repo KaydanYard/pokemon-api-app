@@ -13,6 +13,10 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 export class PokefindComponent implements OnInit {
   data: any;
 
+  //Search By
+  searchBtnNum: number;
+  searchBtnText: string;
+
   // Favorite
   favorite: boolean;
   favoriteText: string;
@@ -39,6 +43,31 @@ export class PokefindComponent implements OnInit {
   ngOnInit(): void {
     if (this.authenticationService.isLoggedIn == true) {
       this.signedIn = true;
+    }
+
+    this.checkSearchType()
+  }
+
+  checkSearchType() {
+    if (this.searchBtnNum === 0) {
+      this.searchBtnText = "ID"
+
+    } else if (this.searchBtnNum === 1) {
+      this.searchBtnText = "Name"
+
+    } else {
+      this.searchBtnNum = 0
+      this.checkSearchType()
+    }
+  }
+
+  changeSearchType() {
+    if (this.searchBtnNum === 1) {
+      this.searchBtnNum = 0
+      this.checkSearchType()
+    } else if (this.searchBtnNum === 0) {
+      this.searchBtnNum = 1
+      this.checkSearchType()
     }
   }
 

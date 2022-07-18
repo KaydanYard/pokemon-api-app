@@ -23,7 +23,7 @@ to add the favorite button
 
 ✅ 7. Add a Paginator to the bottom of the Pokéfind page
 📍 8. Add more content to the home component
-❌ 9. Add Mega forms and other unique forms for pokémon
+❌ 9. Add Mega Evolution forms and other unique forms for pokémon
 
 
 STYLING
