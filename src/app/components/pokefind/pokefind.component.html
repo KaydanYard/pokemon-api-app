@@ -1,41 +1,47 @@
 <mat-card>
 
+  <!-- ========================================-->
+
   <!-- Nav Header -->
   <mat-card-header>
     <app-navbar style="width: 100%;"></app-navbar>
   </mat-card-header>
 
-  <!-- ==================================================================================== -->
-  <!-- ==================================================================================== -->
+  <!-- ========================================-->
 
   <!-- Search Wrapper -->
-  <div class="searchWrapper">
+  <mat-card-content class="searchWrapper">
 
-    <!-- Search Type Btn -->
-    <button mat-flat-button color="primary" (click)="changeSearchType()">
-      Search By {{searchBtnText}}
-    </button>
+    <!-- Search Type Select -->
+    <mat-form-field appearance="fill">
+      <mat-select placeholder="Select a Search Option">
+        <mat-option *ngFor="let searchOpt of searchTypes" [value]="searchOpt.value">
+          {{searchOpt.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
     <br>
 
     <!-- Search Field -->
     <mat-form-field appearance="fill">
       <mat-label>Search By {{searchBtnText}}: </mat-label>
-      <input matInput #pokemonIdSelector placeholder="Input Pokemon {{searchBtnText}} Here" type="number">
+      <input matInput #pokemonIdSelector placeholder="Input Pokemon {{searchBtnText}} Here" type="text">
     </mat-form-field>
     <br>
 
     <label for="pokemon">Choose a Pokemon: </label>
     <button mat-button (click)="displayPokemon(pokemonIdSelector.value)">I Choose You!</button>
 
-  </div>
+  </mat-card-content>
 
-  <!-- ==================================================================================== -->
-  <!-- ==================================================================================== -->
+  <!-- ======================================= -->
 
+  <!-- Pokemon Wrapper -->
   <div class="pokemonWrapper" *ngIf="data">
 
     <!-- Pokemon Image Carousel -->
     <mat-tab-group class="pokemonImageWrapper">
+
       <mat-tab label="Normal Front">
         <h1>{{data.species.name | titlecase}}</h1>
         <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite(data.name, data.id, data.documentID)"
@@ -115,9 +121,9 @@
         <img src={{data.sprites.back_shiny_female}} alt="No Female Shiny"
           style="width:100%; max-height: 400px; object-fit: contain;">
       </mat-tab>
+
     </mat-tab-group>
 
-    <!-- ==================================================================================== -->
 
     <!-- Pokemon Data -->
     <div class="pokemonCard" *ngIf="data">
@@ -220,7 +226,6 @@
       </mat-accordion>
     </div>
 
-    <!-- ==================================================================================== -->
 
     <!-- Page Changer -->
     <div class="pageChangerWrapper">
@@ -235,8 +240,6 @@
         <div>Page index: {{pageEvent.pageIndex}}</div>
       </div>
     </div>
-
-    <!-- ==================================================================================== -->
 
   </div>
 

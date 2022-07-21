@@ -1,4 +1,8 @@
 .mat-card {
+  .mat-card-header {
+    margin-bottom: 1em
+  }
+
   .mat-card-content {
     align-items: center;
     display: flex;

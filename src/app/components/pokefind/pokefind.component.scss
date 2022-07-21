@@ -1,28 +1,21 @@
-body {
+.mat-card {
   width: 100%;
   height: auto;
+
+  .mat-card-header {
+    margin-bottom: 1em
+  }
+
+  .searchWrapper {
+    padding: 1em
+  }
 
   .pokemonWrapper {
     display: flex;
     flex-direction: column;
 
-    .pokemonData {
-
-      .idWrapper {
-        display: flex;
-
-        p {
-          margin-right: 10px;
-        }
-      }
-
-      .typesWrapper {
-        display: flex;
-
-        p {
-          margin-right: 10px;
-        }
-      }
+    .pageChangerWrapper {
+      margin-right: 7em;
     }
   }
 }

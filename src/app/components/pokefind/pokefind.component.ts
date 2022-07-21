@@ -4,6 +4,11 @@ import { PageEvent } from '@angular/material/paginator';
 import { ApiService } from 'src/app/services/api.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
+interface SearchOptions {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-home',
   templateUrl: './pokefind.component.html',
@@ -16,6 +21,11 @@ export class PokefindComponent implements OnInit {
   //Search By
   searchBtnNum: number;
   searchBtnText: string;
+
+  searchTypes: SearchOptions[] = [
+    { value: 'ID', viewValue: 'Search by ID' },
+    { value: 'Name', viewValue: 'Search by Name' },
+  ];
 
   // Favorite
   favorite: boolean;
@@ -50,7 +60,7 @@ export class PokefindComponent implements OnInit {
 
   checkSearchType() {
     if (this.searchBtnNum === 0) {
-      this.searchBtnText = "ID"
+      this.searchBtnText = "Id"
 
     } else if (this.searchBtnNum === 1) {
       this.searchBtnText = "Name"

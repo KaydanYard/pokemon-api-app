@@ -19,7 +19,7 @@ to add the favorite button
   ✅ 5.3. Reinstate Pokefind and the Home Page through routing
 ✅ 6. Add login functionality to the home page
   ✅ 6.1. Make it easier to navigate the app.
-  ❌ 6.2. Fix bug #3
+  📍 6.2. Fix bug #3
 
 ✅ 7. Add a Paginator to the bottom of the Pokéfind page
 📍 8. Add more content to the home component

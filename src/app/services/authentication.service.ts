@@ -94,11 +94,7 @@ export class AuthenticationService {
 
   // Sign in with Google
   GoogleAuth() {
-    return this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
-      if (res) {
-        this.router.navigate(['dashboard']);
-      }
-    });
+    return this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => { });
   }
 
   // Auth logic to run auth providers
