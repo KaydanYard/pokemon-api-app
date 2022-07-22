@@ -1,7 +1,15 @@
+@import '/src/app/helpers/stylers/colors';
+
 .mat-card {
   .mat-card-content {
     display: flex;
     flex-direction: column;
+    margin-left: 5em;
+    align-items: flex-start;
+
+    .homeHeader1 {
+      max-width: 27em;
+    }
 
     img {
       align-self: center;
