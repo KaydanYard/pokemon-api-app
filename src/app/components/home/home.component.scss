@@ -9,11 +9,17 @@
 
     .homeHeader1 {
       max-width: 27em;
+      margin-top: 1em;
+      background-color: $normal;
     }
 
     img {
       align-self: center;
       max-width: 400px;
+    }
+
+    .homeFooter {
+      align-self: center;
     }
   }
 }

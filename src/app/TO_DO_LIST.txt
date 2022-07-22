@@ -24,6 +24,8 @@ to add the favorite button
 ✅ 7. Add a Paginator to the bottom of the Pokéfind page
 📍 8. Add more content to the home component
 ❌ 9. Add Mega Evolution forms and other unique forms for pokémon
+❌ 10. Rework how the forms are displayed in Pokefind
+❌ 11. Make it so the names of the list of pokemon link to their Pokefind page
 
 
 STYLING
@@ -35,7 +37,9 @@ STYLING
 ✅ 3. Center the login and sign up content
 ✅ 4. Update favicon
 📍 5. Add a _colors.scss and _vars.scss to make styling simpler
-
+❌ 6. Apply the customized colors to every page
+  ❌ 6.1. Style the Dashboard Component
+❌ 7. Create themes based on the different types of pokemon
 
 
 BUGS
@@ -48,3 +52,7 @@ BUGS
 ✅ 2. The title of the navbar was delayed and would display the incorrect title for the page.
 
 ✅ 3. To login you have to click the Log In button twice.  This is annoying.
+
+❌ 4. Not automatically routing user to their Dashboard page.
+
+❌ 5. Fix the 404 page so it shows up.
