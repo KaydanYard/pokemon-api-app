@@ -1,20 +1,24 @@
+@import '/src/app/helpers/stylers/_colors.scss';
+@import '/src/app/helpers/stylers/_vars.scss';
+
+
 .mat-card {
-  height: auto;
+    height: auto;
 
-  .mat-card-header {
-    margin-bottom: 1em
-  }
-
-  .searchWrapper {
-    padding: 1em
-  }
-
-  .pokemonWrapper {
-    display: flex;
-    flex-direction: column;
-
-    .pageChangerWrapper {
-      margin-right: 7em;
+    .mat-card-header {
+        @extend %cardHeadStyler;
     }
-  }
+
+    .mat-card-content {
+        @extend %pageAlignLeft;
+    }
+
+    .pokemonWrapper {
+        display: flex;
+        flex-direction: column;
+
+        .pageChangerWrapper {
+            margin-right: 7em;
+        }
+    }
 }

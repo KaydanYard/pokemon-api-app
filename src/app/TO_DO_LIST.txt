@@ -40,6 +40,7 @@ STYLING
 ❌ 6. Apply the customized colors to every page
   ❌ 6.1. Style the Dashboard Component
 ❌ 7. Create themes based on the different types of pokemon
+❌ 8. Add hover animations to the navbar
 
 
 BUGS

@@ -1,0 +1,24 @@
+%pageAlignLeft {
+	display: flex;
+	flex-direction: column;
+	margin-left: 5em;
+	align-items: flex-start;
+}
+
+%pageAlignCenter {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+%cardHeadStyler {
+	margin-bottom: 1em;
+
+	app-navbar {
+		@extend %navSpace;
+	}
+}
+
+%navSpace {
+	width: 100%;
+}

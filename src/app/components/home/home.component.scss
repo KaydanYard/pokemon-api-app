@@ -1,25 +1,40 @@
-@import '/src/app/helpers/stylers/colors';
+@import '/src/app/helpers/stylers/_colors.scss';
+@import '/src/app/helpers/stylers/_vars.scss';
+
 
 .mat-card {
-  .mat-card-content {
-    display: flex;
-    flex-direction: column;
-    margin-left: 5em;
-    align-items: flex-start;
-
-    .homeHeader1 {
-      max-width: 27em;
-      margin-top: 1em;
-      background-color: $normal;
+    .mat-card-header {
+        @extend %cardHeadStyler;
     }
 
-    img {
-      align-self: center;
-      max-width: 400px;
-    }
+    .mat-card-content {
+        @extend %pageAlignLeft;
 
-    .homeFooter {
-      align-self: center;
+        .homeHeader1 {
+            max-width: 27em;
+            background-color: $normal;
+        }
+
+        img {
+            align-self: center;
+            max-width: 400px;
+        }
+
+        .homeFooter {
+            align-self: center;
+
+            .pokemonCenterLink:link,
+            .pokemonCenterLink:active {
+                color: $fire;
+            }
+
+            .pokemonCenterLink:visited {
+                color: $dragon;
+            }
+
+            .pokemonCenterLink:hover {
+                color: $pokeblue;
+            }
+        }
     }
-  }
 }

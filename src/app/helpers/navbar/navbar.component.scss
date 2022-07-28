@@ -1,17 +1,14 @@
-mat-toolbar {
+ #navbar-wrapper {
+   display: flex;
+   width: 100%;
+   height: auto;
+   justify-content: space-between;
 
-  #navbar-wrapper {
-    display: flex;
-    width: 100%;
-    height: auto;
-    justify-content: space-between;
+   .navbar-contents {
+     margin-left: 10px;
 
-    .navbar-contents {
-      margin-left: 20px;
-
-      a {
-        margin-left: 5px;
-      }
-    }
-  }
-}
+     a {
+       margin-left: 5px;
+     }
+   }
+ }

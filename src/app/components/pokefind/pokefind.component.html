@@ -1,246 +1,240 @@
 <mat-card>
 
-  <!-- ========================================-->
+    <!-- Nav Header -->
+    <mat-card-header>
+        <app-navbar></app-navbar>
+    </mat-card-header>
 
-  <!-- Nav Header -->
-  <mat-card-header>
-    <app-navbar style="width: 100%;"></app-navbar>
-  </mat-card-header>
+    <!-- Search Wrapper -->
+    <mat-card-content>
 
-  <!-- ========================================-->
+        <!-- Search Type Select -->
+        <mat-form-field appearance="fill">
+            <mat-select placeholder="Select a Search Option">
+                <mat-option *ngFor="let searchOpt of searchTypes" [value]="searchOpt.value">
+                    {{searchOpt.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
 
-  <!-- Search Wrapper -->
-  <mat-card-content class="searchWrapper">
+        <!-- Search Field -->
+        <mat-form-field appearance="fill">
+            <mat-label>Search By {{searchBtnText}}: </mat-label>
+            <input matInput #pokemonIdSelector placeholder="Input Pokemon {{searchBtnText}} Here" type="text">
+        </mat-form-field>
+        <br>
 
-    <!-- Search Type Select -->
-    <mat-form-field appearance="fill">
-      <mat-select placeholder="Select a Search Option">
-        <mat-option *ngFor="let searchOpt of searchTypes" [value]="searchOpt.value">
-          {{searchOpt.viewValue}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <br>
+        <label for="pokemon">Choose a Pokemon: </label>
+        <button mat-button (click)="displayPokemon(pokemonIdSelector.value)">I Choose You!</button>
 
-    <!-- Search Field -->
-    <mat-form-field appearance="fill">
-      <mat-label>Search By {{searchBtnText}}: </mat-label>
-      <input matInput #pokemonIdSelector placeholder="Input Pokemon {{searchBtnText}} Here" type="text">
-    </mat-form-field>
-    <br>
+    </mat-card-content>
 
-    <label for="pokemon">Choose a Pokemon: </label>
-    <button mat-button (click)="displayPokemon(pokemonIdSelector.value)">I Choose You!</button>
+    <!-- Pokemon Wrapper -->
+    <div class="pokemonWrapper" *ngIf="data">
 
-  </mat-card-content>
+        <!-- Pokemon Image Carousel -->
+        <mat-tab-group class="pokemonImageWrapper">
 
-  <!-- ======================================= -->
+            <mat-tab label="Normal Front">
+                <h1>{{data.species.name | titlecase}}</h1>
+                <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite(data.name, data.id, data.documentID)"
+                    aria-label="icon-button with heart icon">
+                    <mat-icon>{{favoriteText}}</mat-icon>
+                </button>
+                <img src={{data.sprites.front_default}} alt="No Image Available"
+                    style="width:100%; max-height: 400px; object-fit: contain;">
+            </mat-tab>
 
-  <!-- Pokemon Wrapper -->
-  <div class="pokemonWrapper" *ngIf="data">
+            <mat-tab label="Normal Back">
+                <h1>{{data.species.name | titlecase}}</h1>
+                <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite(data.name, data.id, data.documentID)"
+                    aria-label="icon-button with heart icon">
+                    <mat-icon>{{favoriteText}}</mat-icon>
+                </button>
+                <img src={{data.sprites.back_default}} alt="No Image Available"
+                    style="width:100%; max-height: 400px; object-fit: contain;">
+            </mat-tab>
 
-    <!-- Pokemon Image Carousel -->
-    <mat-tab-group class="pokemonImageWrapper">
+            <mat-tab label="Shiny Front">
+                <h1>{{data.species.name | titlecase}} Shiny</h1>
+                <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite(data.name, data.id, data.documentID)"
+                    aria-label="icon-button with heart icon">
+                    <mat-icon>{{favoriteText}}</mat-icon>
+                </button>
+                <img src={{data.sprites.front_shiny}} alt="No Shiny Available"
+                    style="width:100%; max-height: 400px; object-fit: contain;">
+            </mat-tab>
 
-      <mat-tab label="Normal Front">
-        <h1>{{data.species.name | titlecase}}</h1>
-        <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite(data.name, data.id, data.documentID)"
-          aria-label="icon-button with heart icon">
-          <mat-icon>{{favoriteText}}</mat-icon>
-        </button>
-        <img src={{data.sprites.front_default}} alt="No Image Available"
-          style="width:100%; max-height: 400px; object-fit: contain;">
-      </mat-tab>
+            <mat-tab label="Shiny Back">
+                <h1>{{data.species.name | titlecase}} Shiny</h1>
+                <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite(data.name, data.id, data.documentID)"
+                    aria-label="icon-button with heart icon">
+                    <mat-icon>{{favoriteText}}</mat-icon>
+                </button>
+                <img src={{data.sprites.back_shiny}} alt="No Shiny Available"
+                    style="width:100%; max-height: 400px; object-fit: contain;">
+            </mat-tab>
 
-      <mat-tab label="Normal Back">
-        <h1>{{data.species.name | titlecase}}</h1>
-        <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite(data.name, data.id, data.documentID)"
-          aria-label="icon-button with heart icon">
-          <mat-icon>{{favoriteText}}</mat-icon>
-        </button>
-        <img src={{data.sprites.back_default}} alt="No Image Available"
-          style="width:100%; max-height: 400px; object-fit: contain;">
-      </mat-tab>
+            <mat-tab label="Female Front">
+                <h1>{{data.species.name | titlecase}} Female</h1>
+                <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite(data.name, data.id, data.documentID)"
+                    aria-label="icon-button with heart icon">
+                    <mat-icon>{{favoriteText}}</mat-icon>
+                </button>
+                <img src={{data.sprites.front_female}} alt="No Female"
+                    style="width:100%; max-height: 400px; object-fit: contain;">
+            </mat-tab>
 
-      <mat-tab label="Shiny Front">
-        <h1>{{data.species.name | titlecase}} Shiny</h1>
-        <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite(data.name, data.id, data.documentID)"
-          aria-label="icon-button with heart icon">
-          <mat-icon>{{favoriteText}}</mat-icon>
-        </button>
-        <img src={{data.sprites.front_shiny}} alt="No Shiny Available"
-          style="width:100%; max-height: 400px; object-fit: contain;">
-      </mat-tab>
+            <mat-tab label="Female Back">
+                <h1>{{data.species.name | titlecase}} Female</h1>
+                <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite(data.name, data.id, data.documentID)"
+                    aria-label="icon-button with heart icon">
+                    <mat-icon>{{favoriteText}}</mat-icon>
+                </button>
+                <img src={{data.sprites.back_female}} alt="No Female"
+                    style="width:100%; max-height: 400px; object-fit: contain;">
+            </mat-tab>
 
-      <mat-tab label="Shiny Back">
-        <h1>{{data.species.name | titlecase}} Shiny</h1>
-        <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite(data.name, data.id, data.documentID)"
-          aria-label="icon-button with heart icon">
-          <mat-icon>{{favoriteText}}</mat-icon>
-        </button>
-        <img src={{data.sprites.back_shiny}} alt="No Shiny Available"
-          style="width:100%; max-height: 400px; object-fit: contain;">
-      </mat-tab>
+            <mat-tab label="Shiny Female Front">
+                <h1>{{data.species.name | titlecase}} Shiny Female</h1>
+                <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite(data.name, data.id, data.documentID)"
+                    aria-label="icon-button with heart icon">
+                    <mat-icon>{{favoriteText}}</mat-icon>
+                </button>
+                <img src={{data.sprites.front_shiny_female}} alt="No Female Shiny"
+                    style="width:100%; max-height: 400px; object-fit: contain;">
+            </mat-tab>
 
-      <mat-tab label="Female Front">
-        <h1>{{data.species.name | titlecase}} Female</h1>
-        <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite(data.name, data.id, data.documentID)"
-          aria-label="icon-button with heart icon">
-          <mat-icon>{{favoriteText}}</mat-icon>
-        </button>
-        <img src={{data.sprites.front_female}} alt="No Female"
-          style="width:100%; max-height: 400px; object-fit: contain;">
-      </mat-tab>
+            <mat-tab label="Shiny Female Back">
+                <h1>{{data.species.name | titlecase}} Shiny Female</h1>
+                <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite(data.name, data.id, data.documentID)"
+                    aria-label="icon-button with heart icon">
+                    <mat-icon>{{favoriteText}}</mat-icon>
+                </button>
+                <img src={{data.sprites.back_shiny_female}} alt="No Female Shiny"
+                    style="width:100%; max-height: 400px; object-fit: contain;">
+            </mat-tab>
 
-      <mat-tab label="Female Back">
-        <h1>{{data.species.name | titlecase}} Female</h1>
-        <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite(data.name, data.id, data.documentID)"
-          aria-label="icon-button with heart icon">
-          <mat-icon>{{favoriteText}}</mat-icon>
-        </button>
-        <img src={{data.sprites.back_female}} alt="No Female"
-          style="width:100%; max-height: 400px; object-fit: contain;">
-      </mat-tab>
-
-      <mat-tab label="Shiny Female Front">
-        <h1>{{data.species.name | titlecase}} Shiny Female</h1>
-        <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite(data.name, data.id, data.documentID)"
-          aria-label="icon-button with heart icon">
-          <mat-icon>{{favoriteText}}</mat-icon>
-        </button>
-        <img src={{data.sprites.front_shiny_female}} alt="No Female Shiny"
-          style="width:100%; max-height: 400px; object-fit: contain;">
-      </mat-tab>
-
-      <mat-tab label="Shiny Female Back">
-        <h1>{{data.species.name | titlecase}} Shiny Female</h1>
-        <button *ngIf="signedIn" mat-icon-button (click)="checkFavorite(data.name, data.id, data.documentID)"
-          aria-label="icon-button with heart icon">
-          <mat-icon>{{favoriteText}}</mat-icon>
-        </button>
-        <img src={{data.sprites.back_shiny_female}} alt="No Female Shiny"
-          style="width:100%; max-height: 400px; object-fit: contain;">
-      </mat-tab>
-
-    </mat-tab-group>
+        </mat-tab-group>
 
 
-    <!-- Pokemon Data -->
-    <div class="pokemonCard" *ngIf="data">
-      <mat-accordion multi>
+        <!-- Pokemon Data -->
+        <div class="pokemonCard" *ngIf="data">
+            <mat-accordion multi>
 
-        <!-- Name and ID -->
-        <mat-expansion-panel hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Name and ID
-            </mat-panel-title>
-            <mat-panel-description>
-              The Name and ID of the selected pokemon
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <div class="idWrapper">
-            <p class="name">Name: {{data.name | titlecase}}</p>
-            <p class="id">Number: {{data.id}}</p>
-            <p class="species">Species: {{data.species.url}}</p>
-          </div>
-        </mat-expansion-panel>
+                <!-- Name and ID -->
+                <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Name and ID
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            The Name and ID of the selected pokemon
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <div class="idWrapper">
+                        <p class="name">Name: {{data.name | titlecase}}</p>
+                        <p class="id">Number: {{data.id}}</p>
+                        <p class="species">Species: {{data.species.url}}</p>
+                    </div>
+                </mat-expansion-panel>
 
-        <!-- Types -->
-        <mat-expansion-panel hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Types
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <div class="types" *ngFor="let types of data.types; let i = index;">
-            {{ i + 1 }} - {{data.types[i].type.name | titlecase}}
-          </div>
-        </mat-expansion-panel>
+                <!-- Types -->
+                <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Types
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="types" *ngFor="let types of data.types; let i = index;">
+                        {{ i + 1 }} - {{data.types[i].type.name | titlecase}}
+                    </div>
+                </mat-expansion-panel>
 
-        <!-- Abilities -->
-        <mat-expansion-panel hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Abilities
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <div class="abilities" *ngFor="let abilities of data.abilities; let i = index;">
-            {{ i + 1 }} - {{data.abilities[i].ability.name | titlecase}}
-          </div>
-        </mat-expansion-panel>
+                <!-- Abilities -->
+                <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Abilities
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="abilities" *ngFor="let abilities of data.abilities; let i = index;">
+                        {{ i + 1 }} - {{data.abilities[i].ability.name | titlecase}}
+                    </div>
+                </mat-expansion-panel>
 
-        <!-- Stats -->
-        <mat-expansion-panel hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Stats
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <table matTable>
-            <tr *ngFor="let stats of data.stats; let i = index;">
-              <td>{{data.stats[i].stat.name | titlecase}}: {{data.stats[i].base_stat}}</td>
-            </tr>
-          </table>
-        </mat-expansion-panel>
+                <!-- Stats -->
+                <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Stats
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <table matTable>
+                        <tr *ngFor="let stats of data.stats; let i = index;">
+                            <td>{{data.stats[i].stat.name | titlecase}}: {{data.stats[i].base_stat}}</td>
+                        </tr>
+                    </table>
+                </mat-expansion-panel>
 
-        <!-- Moveset -->
-        <mat-expansion-panel hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Moveset
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <div class="moves" *ngFor="let move of data.moves; let i = index;">
-            {{ i + 1 }} - {{data.moves[i].move.name | titlecase}}
-          </div>
-        </mat-expansion-panel>
+                <!-- Moveset -->
+                <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Moveset
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="moves" *ngFor="let move of data.moves; let i = index;">
+                        {{ i + 1 }} - {{data.moves[i].move.name | titlecase}}
+                    </div>
+                </mat-expansion-panel>
 
-        <!-- Physical Data -->
-        <mat-expansion-panel hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Physical Data
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <div class="height">
-            Height: {{data.height}}
-          </div>
+                <!-- Physical Data -->
+                <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Physical Data
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="height">
+                        Height: {{data.height}}
+                    </div>
 
-          <div class="weight">
-            Weight: {{data.weight}}
-          </div>
-        </mat-expansion-panel>
+                    <div class="weight">
+                        Weight: {{data.weight}}
+                    </div>
+                </mat-expansion-panel>
 
-        <!-- Games -->
-        <mat-expansion-panel hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Games
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <div class="games" *ngFor="let games of data.game_indices; let i = index;">
-            {{ i + 1 }} - {{data.game_indices[i].version.name | titlecase}}
-          </div>
-        </mat-expansion-panel>
-      </mat-accordion>
+                <!-- Games -->
+                <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Games
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="games" *ngFor="let games of data.game_indices; let i = index;">
+                        {{ i + 1 }} - {{data.game_indices[i].version.name | titlecase}}
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+
+
+        <!-- Page Changer -->
+        <div class="pageChangerWrapper">
+            <mat-paginator hdPageSize=true; [length]="length" [pageIndex]="pageIndex" [pageSize]="pageSize"
+                (page)="onChangePage($event)" aria-label="Select page">
+            </mat-paginator>
+
+            <div *ngIf="pageEvent">
+                <h5>Page Change Event Properties</h5>
+                <div>List length: {{pageEvent.length}}</div>
+                <div>Page size: {{pageEvent.pageSize}}</div>
+                <div>Page index: {{pageEvent.pageIndex}}</div>
+            </div>
+        </div>
+
     </div>
-
-
-    <!-- Page Changer -->
-    <div class="pageChangerWrapper">
-      <mat-paginator hdPageSize=true; [length]="length" [pageIndex]="pageIndex" [pageSize]="pageSize"
-        (page)="onChangePage($event)" aria-label="Select page">
-      </mat-paginator>
-
-      <div *ngIf="pageEvent">
-        <h5>Page Change Event Properties</h5>
-        <div>List length: {{pageEvent.length}}</div>
-        <div>Page size: {{pageEvent.pageSize}}</div>
-        <div>Page index: {{pageEvent.pageIndex}}</div>
-      </div>
-    </div>
-
-  </div>
 
 </mat-card>
