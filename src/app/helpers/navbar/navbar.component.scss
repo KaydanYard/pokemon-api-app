@@ -1,15 +1,50 @@
- .navbar-wrapper {
-   display: flex;
-   width: 100%;
-   height: auto;
-   justify-content: space-between;
+@import '/src/app/helpers/stylers/_colors.scss';
+@import '/src/app/helpers/stylers/_vars.scss';
 
-   .navbar-contents {
-     margin-left: 10px;
-     margin-right: 10px;
 
-     a {
-       margin-left: 5px;
-     }
-   }
- }
+.navbar-wrapper {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+
+    .navbar-contents {
+        margin-left: 10px;
+        margin-right: 10px;
+
+        a {
+            margin-left: 5px;
+            margin-right: 5px;
+
+            #homeBtn {
+                background-color: $pokered;
+                color: $normal;
+            }
+
+            #pokefindBtn {
+                background-color: $dark;
+                color: $normal;
+            }
+
+            #dashboardBtn {
+                background-color: $steel;
+                color: $normal;
+            }
+
+            #logoutBtn {
+                background-color: $rock;
+                color: $normal;
+            }
+
+            #loginBtn {
+                background-color: $dragon;
+                color: $ground;
+            }
+
+            #signupBtn {
+                background-color: $poison;
+                color: $bug;
+            }
+        }
+    }
+}

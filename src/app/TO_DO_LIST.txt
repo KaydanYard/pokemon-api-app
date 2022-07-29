@@ -23,6 +23,7 @@ to add the favorite button
 
 ✅ 7. Add a Paginator to the bottom of the Pokéfind page
 ✅ 8. Add more content to the home component
+  ❌ 8.1. Add a quick link to Pokefind like "click here to get started!"
 ❌ 9. Add Mega Evolution forms and other unique forms for pokémon
 ❌ 10. Rework how the forms are displayed in Pokefind
 ❌ 11. Make it so the names of the list of pokemon link to their Pokefind page
@@ -44,10 +45,11 @@ STYLING
   ❌ 6.4. Style the Pokefind Component
   ❌ 6.5. Style the Forgot Password Component
 ❌ 7. Create themes based on the different types of pokemon
-❌ 8. Style the navbar
+📍 8. Style the navbar
   ❌ 8.1. Add hover animations to the navbar
   ❌ 8.2. Fix the spacing issue
-  ❌ 8.3. Give it some more color
+  ✅ 8.3. Give it some more color
+  📍 8.4. Determine which link is selected using an underline
 
 
 BUGS
@@ -62,5 +64,6 @@ BUGS
 ✅ 3. To login you have to click the Log In button twice.  This is annoying.
 
 ❌ 4. Not automatically routing user to their Dashboard page.
+  ❌ 4.1. User profile picture not loading.
 
 ❌ 5. Fix the 404 page so it shows up.

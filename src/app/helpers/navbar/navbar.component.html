@@ -6,37 +6,37 @@
 
     <div class="navbar-contents">
       <a routerLink="/home">
-        <button mat-raised-button>
+        <button id="homeBtn" mat-raised-button>
           Home
         </button>
       </a>
 
       <a routerLink="/pokefind">
-        <button mat-raised-button>
+        <button id="pokefindBtn" mat-raised-button>
           Pokéfind
         </button>
       </a>
 
       <a *ngIf="signedIn" routerLink="/dashboard">
-        <button mat-raised-button>
+        <button id="dashboardBtn" mat-raised-button>
           Dashboard
         </button>
       </a>
 
       <a *ngIf="signedIn">
-        <button mat-raised-button (click)="authenticationService.SignOut()">
+        <button id="logoutBtn" mat-raised-button (click)="authenticationService.SignOut()">
           Log Out
         </button>
       </a>
 
       <a *ngIf="!signedIn" routerLink="/login">
-        <button mat-raised-button>
+        <button id="loginBtn" mat-raised-button>
           Login
         </button>
       </a>
 
       <a *ngIf="!signedIn" routerLink="/sign-up">
-        <button mat-raised-button>
+        <button id="signupBtn" mat-raised-button>
           Sign Up
         </button>
       </a>
