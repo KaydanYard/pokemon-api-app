@@ -105,6 +105,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "pokemon-api-app:build:production",
+            "firebaseProject": "pokemon-api-app-ff02b",
+            "firebaseHostingSite": "pokemon-api-app-ff02b"
+          }
         }
       }
     }

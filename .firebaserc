@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "pokemon-api-app-ff02b"
+  },
+  "targets": {
+    "pokemon-api-app-ff02b": {
+      "hosting": {
+        "pokemon-api-app": [
+          "pokemon-api-app-ff02b"
+        ]
+      }
+    }
   }
 }
