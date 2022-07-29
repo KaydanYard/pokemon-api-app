@@ -10,30 +10,84 @@
     .mat-card-content {
         @extend %pageAlignLeft;
 
-        .homeHeader1 {
-            max-width: 27em;
-            background-color: $normal;
+        .homeBannerWrapper {
+            position: relative;
+            max-height: 700px;
+            overflow: hidden;
+
+            .homeBannerTitleWrapper {
+                position: absolute;
+                width: 100%;
+
+                .homeBannerTitle {
+                    padding: 0.5em;
+                    text-align: center;
+                    font-size: 8vw;
+                    color: $dad;
+                    text-shadow: 0 0 10px $dark;
+                }
+            }
+
+            .homeBannerImg {
+                width: 100%;
+            }
+
+            .homeBannerTextbox {
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+                padding-left: 20px;
+                padding-right: 20px;
+                background-color: $normal;
+
+                .pokemonCenterLink:link,
+                .pokemonCenterLink:active {
+                    color: $fire;
+                }
+
+                .pokemonCenterLink:visited {
+                    color: $fighting;
+                }
+
+                .pokemonCenterLink:hover {
+                    color: $pokeblue;
+                }
+            }
         }
+    }
 
-        img {
-            align-self: center;
-            max-width: 400px;
-        }
+    .mat-card-footer {
+        width: 100%;
+        margin: 0;
+        text-align: center;
 
-        .homeFooter {
-            align-self: center;
+        .footerIconsWrapper {
+            padding: 0px 22vw;
+            justify-content: space-evenly;
+            display: flex;
 
-            .pokemonCenterLink:link,
-            .pokemonCenterLink:active {
+            i {
+
+                padding: 0;
+                font-size: 32px;
+            }
+
+            a:link,
+            a:active {
                 color: $fire;
             }
 
-            .pokemonCenterLink:visited {
-                color: $dragon;
+            a:visited {
+                color: $fighting;
             }
 
-            .pokemonCenterLink:hover {
-                color: $pokeblue;
+            a:hover {
+
+                i {
+                    transition: 0.5s ease-in-out;
+                    font-size: 40px;
+                    color: $pokeblue;
+                }
             }
         }
     }

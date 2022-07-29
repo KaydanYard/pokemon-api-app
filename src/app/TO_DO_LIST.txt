@@ -22,7 +22,7 @@ to add the favorite button
   ✅ 6.2. Fix bug #3
 
 ✅ 7. Add a Paginator to the bottom of the Pokéfind page
-📍 8. Add more content to the home component
+✅ 8. Add more content to the home component
 ❌ 9. Add Mega Evolution forms and other unique forms for pokémon
 ❌ 10. Rework how the forms are displayed in Pokefind
 ❌ 11. Make it so the names of the list of pokemon link to their Pokefind page
@@ -33,14 +33,21 @@ STYLING
 ✅ 0.5. Fix the following components using Bootstrap: ✅ Login, ✅ Sign Up, ✅ Forgot Password, ✅ Verify Email, ✅ Dashboard
 ✅ 1. Style the Nav Bar by using mat-buttons instead of regular links
   ✅ 1.1. Add spacing to the Nav Bar
-📍 2. Add more Styles to the home component
+✅ 2. Add more Styles to the home component
 ✅ 3. Center the login and sign up content
 ✅ 4. Update favicon
-📍 5. Add a _colors.scss and _vars.scss to make styling simpler
+✅ 5. Add a _colors.scss and _vars.scss to make styling simpler
 ❌ 6. Apply the customized colors to every page
   ❌ 6.1. Style the Dashboard Component
+  ❌ 6.2. Style the Login Component
+  ❌ 6.3. Style the Sign Up Component
+  ❌ 6.4. Style the Pokefind Component
+  ❌ 6.5. Style the Forgot Password Component
 ❌ 7. Create themes based on the different types of pokemon
-❌ 8. Add hover animations to the navbar
+❌ 8. Style the navbar
+  ❌ 8.1. Add hover animations to the navbar
+  ❌ 8.2. Fix the spacing issue
+  ❌ 8.3. Give it some more color
 
 
 BUGS
