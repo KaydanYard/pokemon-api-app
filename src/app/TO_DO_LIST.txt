@@ -67,3 +67,5 @@ BUGS
   ❌ 4.1. User profile picture not loading.
 
 ❌ 5. Fix the 404 page so it shows up.
+
+❌ 6. Reinstate Firebase
