@@ -46,7 +46,7 @@ STYLING
   ❌ 6.5. Style the Forgot Password Component
 ❌ 7. Create themes based on the different types of pokemon
 📍 8. Style the navbar
-  ❌ 8.1. Add hover animations to the navbar
+  ❌ 8.1. Add hover animations to the navbar.  Make the buttons turn into a circle like a Pokéball.
   ❌ 8.2. Fix the spacing issue
   ✅ 8.3. Give it some more color
   📍 8.4. Determine which link is selected using an underline
