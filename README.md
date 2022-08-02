@@ -30,6 +30,11 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
+## Branches
+
+There is another branch inside of VSCode called working. Work from there and make sure to merge the branches together then remove working.
+For additional information click this [link](https://thenewstack.io/dont-mess-with-the-master-working-with-branches-in-git-and-github/) to learn more about branches.
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
