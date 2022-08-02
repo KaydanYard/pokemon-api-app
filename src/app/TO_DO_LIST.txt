@@ -61,11 +61,11 @@ BUGS
 
 ✅ 2. The title of the navbar was delayed and would display the incorrect title for the page.
 
-✅ 3. To login you have to click the Log In button twice.  This is annoying.
+❌ 3. To login you have to click the Log In button twice.  This is annoying.
 
 ❌ 4. Not automatically routing user to their Dashboard page.
   ❌ 4.1. User profile picture not loading.
 
 ❌ 5. Fix the 404 page so it shows up.
 
-❌ 6. Reinstate Firebase
+✅ 6. Reinstate Firebase

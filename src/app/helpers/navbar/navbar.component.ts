@@ -7,6 +7,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  box: HTMLElement | null;
   selectedPage: any;
   signedIn: boolean;
 
@@ -18,24 +19,8 @@ export class NavbarComponent implements OnInit {
     // Navbar Title Getter
     let thePath = window.location.href
     const lastItem = thePath.substring(thePath.lastIndexOf('/') + 1)
+    const box = document.getElementById(lastItem + "Btn");
 
-
-    var btns: string[] = [
-      "homeBtn",
-      "pokefindBtn",
-      "dashboardBtn",
-      "logoutBtn",
-      "loginBtn",
-      "signupBtn"
-    ]
-
-    for (let index = 0; index < btns.length; index++) {
-      const iBtn = btns[index];
-      if (lastItem + "Btn" == iBtn) {
-        const selectedBtn = document.getElementById(iBtn)
-        selectedBtn.style.borderBottom = "10px solid black"
-      }
-    }
 
     if (lastItem == "home") {
       this.selectedPage = "Poké Home"
@@ -51,5 +36,10 @@ export class NavbarComponent implements OnInit {
       this.signedIn = true;
     }
 
+    box?.addEventListener('click', function handleClick() {
+      console.log("Button Pressed")
+      box.classList.add('selectedNav')
+    });
   }
+
 }

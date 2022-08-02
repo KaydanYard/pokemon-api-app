@@ -16,6 +16,10 @@
             margin-left: 5px;
             margin-right: 5px;
 
+            .selectedNav {
+                border-bottom: 10px solid black;
+            }
+
             #homeBtn {
                 background-color: $pokered;
                 color: $normal;
